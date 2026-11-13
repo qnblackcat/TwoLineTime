@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Settings apply on the next status bar update. Respring if nothing changes.</string>
+			<key>label</key>
+			<string>⚙️ General</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>hideFocus</string>
+			<key>label</key>
+			<string>Hide Focus icon</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>respring</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Respring</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Blink colon every second. It is ignored when the format has seconds.</string>
+			<key>label</key>
+			<string>🕐 Line 1</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>ios</string>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>format1</string>
+			<key>label</key>
+			<string>Format</string>
+			<key>staticTextMessage</key>
+			<string>Custom formats: see nsdateformatter.com.</string>
+			<key>validTitles</key>
+			<array>
+				<string>iOS default</string>
+				<string>hh:mm  (11:56)</string>
+				<string>HH:mm  (23:56)</string>
+				<string>h:mm a  (11:56 PM)</string>
+				<string>hh:mm:ss  (11:56:07)</string>
+				<string>HH:mm:ss  (23:56:07)</string>
+				<string>Custom…</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>ios</string>
+				<string>hh:mm</string>
+				<string>HH:mm</string>
+				<string>h:mm a</string>
+				<string>hh:mm:ss</string>
+				<string>HH:mm:ss</string>
+				<string>custom</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<string></string>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>id</key>
+			<string>format1Custom</string>
+			<key>key</key>
+			<string>format1Custom</string>
+			<key>label</key>
+			<string>Custom format</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<integer>12</integer>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>isNumeric</key>
+			<true/>
+			<key>key</key>
+			<string>size1</string>
+			<key>label</key>
+			<string>Font size</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>bold1</string>
+			<key>label</key>
+			<string>Bold</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>italic1</string>
+			<key>label</key>
+			<string>Italic</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>blink1</string>
+			<key>label</key>
+			<string>Blink colon</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>📅 Line 2</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSLinkListCell</string>
+			<key>default</key>
+			<string>E MM/dd</string>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>detail</key>
+			<string>PSListItemsController</string>
+			<key>key</key>
+			<string>format2</string>
+			<key>label</key>
+			<string>Format</string>
+			<key>staticTextMessage</key>
+			<string>Custom formats: see nsdateformatter.com.</string>
+			<key>validTitles</key>
+			<array>
+				<string>E MM/dd  (Fri 11/13)</string>
+				<string>E dd/MM  (Fri 13/11)</string>
+				<string>EEE d MMM  (Fri 13 Nov)</string>
+				<string>dd/MM  (13/11)</string>
+				<string>dd/MM/yyyy  (13/11/2026)</string>
+				<string>MMM d  (Nov 13)</string>
+				<string>EEEE  (Friday)</string>
+				<string>Hidden</string>
+				<string>Custom…</string>
+			</array>
+			<key>validValues</key>
+			<array>
+				<string>E MM/dd</string>
+				<string>E dd/MM</string>
+				<string>EEE d MMM</string>
+				<string>dd/MM</string>
+				<string>dd/MM/yyyy</string>
+				<string>MMM d</string>
+				<string>EEEE</string>
+				<string>none</string>
+				<string>custom</string>
+			</array>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<string></string>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>id</key>
+			<string>format2Custom</string>
+			<key>key</key>
+			<string>format2Custom</string>
+			<key>label</key>
+			<string>Custom format</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSEditTextCell</string>
+			<key>default</key>
+			<integer>12</integer>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>isNumeric</key>
+			<true/>
+			<key>key</key>
+			<string>size2</string>
+			<key>label</key>
+			<string>Font size</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>bold2</string>
+			<key>label</key>
+			<string>Bold</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>italic2</string>
+			<key>label</key>
+			<string>Italic</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>The position of the two lines is computed automatically. This moves them further: positive down, negative up (points). Not used while Line 2 is hidden.</string>
+			<key>label</key>
+			<string>↕️ Vertical offset</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSliderCell</string>
+			<key>default</key>
+			<real>0.0</real>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>offset</string>
+			<key>max</key>
+			<real>10.0</real>
+			<key>min</key>
+			<real>-10.0</real>
+			<key>showValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Debug: logs what the tweak does and writes the log to a file on this device (about 128 KB) so you can copy it into a bug report. Nothing is logged while it is off.</string>
+			<key>label</key>
+			<string>🛠️ Troubleshooting</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>debug</string>
+			<key>label</key>
+			<string>Debug</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>copyDebugLog</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Copy Debug Log</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>clearDebugLog</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Clear Debug Log</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>© 2026 Qn (Đạt Nguyễn)
+Licensed under GNU GPLv3</string>
+			<key>label</key>
+			<string>ℹ️ About</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSTitleValueCell</string>
+			<key>get</key>
+			<string>tweakVersion:</string>
+			<key>label</key>
+			<string>Version</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>openSourceCode:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Source Code</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>openTwitter:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Twitter</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>TwoLineTime</string>
+</dict>
+</plist>
