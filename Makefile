@@ -6,7 +6,7 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = TwoLineTime
 
-TwoLineTime_FILES = Tweak.x TLTLog.m
+TwoLineTime_FILES = Tweak.x TLTSettings.m TLTRender.m TLTPill.m TLTFocus.m TLTLog.m
 TwoLineTime_FRAMEWORKS = UIKit
 TwoLineTime_CFLAGS = -fobjc-arc
 

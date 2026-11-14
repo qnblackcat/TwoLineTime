@@ -8,7 +8,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>Settings apply on the next status bar update. Respring if nothing changes.</string>
+			<string>Settings apply on the next status bar update.</string>
 			<key>label</key>
 			<string>⚙️ General</string>
 		</dict>
@@ -25,28 +25,6 @@
 			<string>enabled</string>
 			<key>label</key>
 			<string>Enabled</string>
-		</dict>
-		<dict>
-			<key>PostNotification</key>
-			<string>com.qn.twolinetime/settingschanged</string>
-			<key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.qn.twolinetime</string>
-			<key>key</key>
-			<string>hideFocus</string>
-			<key>label</key>
-			<string>Hide Focus icon</string>
-		</dict>
-		<dict>
-			<key>action</key>
-			<string>respring</string>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>label</key>
-			<string>Respring</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -301,6 +279,56 @@
 			<real>-10.0</real>
 			<key>showValue</key>
 			<true/>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Two lines in the pill: it makes the coloured pill that replaces the clock (screen recording, calls, hotspot) taller so both lines fit. Notch iPhones only.</string>
+			<key>label</key>
+			<string>📶 Status bar</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>hideFocus</string>
+			<key>label</key>
+			<string>Hide Focus icon</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>hideBreadcrumb</string>
+			<key>label</key>
+			<string>Hide Breadcrumb</string>
+		</dict>
+		<dict>
+			<key>PostNotification</key>
+			<string>com.qn.twolinetime/settingschanged</string>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<false/>
+			<key>defaults</key>
+			<string>com.qn.twolinetime</string>
+			<key>key</key>
+			<string>pillTwoLines</string>
+			<key>label</key>
+			<string>Two lines in the pill (experimental)</string>
 		</dict>
 		<dict>
 			<key>cell</key>
