@@ -157,4 +157,18 @@ static NSString *const kSuite = @"com.qn.twolinetime";
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+- (void)resetOffset {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Reset vertical offset?" message:@"The offset will go back to 0." preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil]];
+    [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:kSuite];
+        [prefs removeObjectForKey:@"offset"];
+        [prefs synchronize];
+        CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(),
+                                             CFSTR("com.qn.twolinetime/settingschanged"), NULL, NULL, YES);
+        [self reloadSpecifiers];
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 @end

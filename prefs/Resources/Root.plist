@@ -281,6 +281,14 @@
 			<true/>
 		</dict>
 		<dict>
+			<key>action</key>
+			<string>resetOffset</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Reset Offset</string>
+		</dict>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
