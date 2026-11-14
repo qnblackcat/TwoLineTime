@@ -178,6 +178,19 @@
 
 %end
 
+// On iOS 17 the data class is STUIStatusBarData, whose parents (STMutableStatusBarData < STStatusBarData, from
+// SystemStatus) define the navigation entries, and the bar may be handed a plain STStatusBarData: hook the parents too,
+// otherwise the Dynamic Island provider still sees the breadcrumb and keeps the room for it.
+%hook STStatusBarData
+- (id)backNavigationEntry { return enabled && hideBreadcrumb ? nil : %orig; }
+- (id)forwardNavigationEntry { return enabled && hideBreadcrumb ? nil : %orig; }
+%end
+
+%hook STMutableStatusBarData
+- (id)backNavigationEntry { return enabled && hideBreadcrumb ? nil : %orig; }
+- (id)forwardNavigationEntry { return enabled && hideBreadcrumb ? nil : %orig; }
+%end
+
 %hook STUIStatusBarData
 - (id)backNavigationEntry { return enabled && hideBreadcrumb ? nil : %orig; }
 - (id)forwardNavigationEntry { return enabled && hideBreadcrumb ? nil : %orig; }
