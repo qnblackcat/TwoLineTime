@@ -123,6 +123,14 @@ void refreshLabels(void) {
     }
 }
 
+// Move every managed label to its place again (the breadcrumb came or went)
+void realignLabels(void) {
+    for (TLTStatusLabel *label in managedLabels.allObjects) {
+        alignVertically(label);
+        [label setNeedsLayout];
+    }
+}
+
 void updateTicker(void) {
     BOOL want = enabled && (lines[0].seconds || lines[1].seconds || lines[0].blink) && screenIsOn();
     if (want && !ticker) {
@@ -164,7 +172,9 @@ void alignVertically(TLTStatusLabel *label) {
                 dy = MAX(0, (font.ascender + 1 + font.capHeight - cap) / 2); // automatic
             }
             if (label.tlt_pill && pillTwoLines) dy += kPillDrop; // the pill follows the text (alignPill)
-            dy += offsetY; // manual
+            // manual; ignored while a breadcrumb is on screen: the user's offset was set for the bar without it, and
+            // would push the second line onto the breadcrumb
+            if (!breadcrumbVisible) dy += offsetY;
         }
     }
     if (!label.tlt_dy && dy == 0) return;

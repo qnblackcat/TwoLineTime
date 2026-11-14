@@ -73,7 +73,8 @@
 %hook _UIStatusBarDisplayItem
 
 - (BOOL)isEnabled {
-    return hidesItem(self) ? NO : %orig;
+    BOOL hidden = hidesItem(self);
+    return trackBreadcrumb(self, hidden ? NO : %orig);
 }
 
 %end
@@ -173,7 +174,8 @@
 %hook STUIStatusBarDisplayItem
 
 - (BOOL)isEnabled {
-    return hidesItem(self) ? NO : %orig;
+    BOOL hidden = hidesItem(self);
+    return trackBreadcrumb(self, hidden ? NO : %orig);
 }
 
 %end

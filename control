@@ -1,7 +1,7 @@
 Package: com.qn.twolinetime
 Name: TwoLineTime
 Depends: mobilesubstrate, preferenceloader, firmware (>= 15.0)
-Version: 1.1.1
+Version: 1.1.2
 Architecture: iphoneos-arm
 Description: Two-line status bar clock: time on top, date below, with custom formats and seconds
 Maintainer: Qn <qnblackcat@gmail.com>

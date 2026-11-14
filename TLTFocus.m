@@ -52,6 +52,29 @@ static BOOL isBreadcrumbItem(id item) {
     return NO;
 }
 
+BOOL breadcrumbVisible;
+
+// Called with the answer of every display item's isEnabled. A breadcrumb item that answers YES is on screen (the
+// navigation entries of the data are not a reliable sign: they can be non-nil while nothing shows). Tracked per item,
+// so another status bar (lock screen...) without a breadcrumb cannot cancel the one that has it.
+BOOL trackBreadcrumb(id displayItem, BOOL isEnabled) {
+    static NSHashTable *shownItems;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{ shownItems = [NSHashTable weakObjectsHashTable]; });
+    id item = [(TLTDisplayItem *)displayItem item];
+    if (!isBreadcrumbItem(item)) return isEnabled;
+    BOOL shown = isEnabled && !inControlCenter(item); // hidden by us: isEnabled is already NO
+    if (shown) [shownItems addObject:displayItem]; else [shownItems removeObject:displayItem];
+    BOOL visible = shownItems.count > 0;
+    if (visible != breadcrumbVisible) {
+        breadcrumbVisible = visible;
+        TLTLog(@"breadcrumb %@", visible ? @"shown" : @"gone");
+        // the breadcrumb changes the status bar layout: put the clock where it belongs now (its layout may not run again)
+        dispatch_async(dispatch_get_main_queue(), ^{ realignLabels(); });
+    }
+    return isEnabled;
+}
+
 BOOL hidesItem(id displayItem) {
     if (!enabled || !(hideFocus || hideBreadcrumb)) return NO;
     id item = [(TLTDisplayItem *)displayItem item];

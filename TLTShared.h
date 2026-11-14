@@ -72,6 +72,7 @@ TLT_HIDDEN void TLTRenderInit(void);         // once, from the constructor
 TLT_HIDDEN void TLTScreenChanged(void);      // the screen turned on or off
 TLT_HIDDEN void refreshLabels(void);
 TLT_HIDDEN void updateTicker(void);
+TLT_HIDDEN void realignLabels(void);
 TLT_HIDDEN UIFont *lineFont(TLTLine *line, CGFloat scale);
 TLT_HIDDEN UIFont *line1Font(TLTStatusLabel *label, CGFloat scale);
 TLT_HIDDEN NSString *line1Text(TLTStatusLabel *label, NSDate *now);
@@ -94,3 +95,6 @@ TLT_HIDDEN CGSize tallerPill(id provider, CGSize size); // what the visual provi
 
 // ---- TLTFocus.m: hiding the Focus icon and the breadcrumb ----
 TLT_HIDDEN BOOL hidesItem(id displayItem); // the status bar item must not show (isEnabled answers NO)
+// Passes a display item's isEnabled answer through, remembering whether a breadcrumb item is on screen
+TLT_HIDDEN BOOL trackBreadcrumb(id displayItem, BOOL isEnabled);
+TLT_HIDDEN extern BOOL breadcrumbVisible; // a breadcrumb is on screen (never while it is hidden)
