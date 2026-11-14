@@ -45,15 +45,10 @@ static NSString *const kSuite = @"com.qn.twolinetime";
             [(PSSpecifier *)_specifiers[0] setProperty:@"This device has no Face ID: TwoLineTime is made for iPhones with a notch or the Dynamic Island, so it is off by default here. Settings apply on the next status bar update." forKey:@"footerText"];
         }
         // The tweak writes "pillSupported" once its status bar has a visual provider: a Dynamic Island iPhone cannot get a taller
-        // pill, so grey the switch out and say why (no value yet: leave it on)
+        // pill, so grey the switch out (no value yet: leave it on). The footer stays the same as on notch iPhones.
         NSUserDefaults *prefs = [[NSUserDefaults alloc] initWithSuiteName:kSuite];
         if ([prefs objectForKey:@"pillSupported"] && ![prefs boolForKey:@"pillSupported"]) {
             [[self listSpecifierForKey:@"pillTwoLines"] setProperty:@NO forKey:@"enabled"];
-            for (PSSpecifier *s in _specifiers) {
-                if ([[s propertyForKey:@"label"] hasPrefix:@"📶"]) {
-                    [s setProperty:@"Two lines in the pill is not available on iPhones with the Dynamic Island: it has no notch pill to make taller. The breadcrumb is the \"back to app\" link at the left of the status bar." forKey:@"footerText"];
-                }
-            }
         }
         for (NSString *key in @[@"format1", @"format2"]) {
             PSSpecifier *custom = [self specifierForID:[key stringByAppendingString:@"Custom"]];
